@@ -9,12 +9,11 @@
    → Les --nom: valeur sont appelées "variables CSS"
 */
 :root {
-    --cream: #F5F5DC;
+    --cream: #F5E6D3;
     --gold: #D4AF37;
-    --burgundy: #800020;
-    --black: #1A1A1A;
+    --burgundy: #3D0E1A;
+    --green: #2C4A3E;
 }
-
 body {
     background-color: var(--cream);
     color: var(--black);
@@ -61,7 +60,7 @@ img {
 .dark-section {
     background-color: var(--burgundy);
     color: var(--cream);
-    padding: 50px 0;
+    padding: 20px 0;
 }
 
 
@@ -135,6 +134,8 @@ img {
     object-fit: cover;
     
     border-radius: 10px;
+    margin-bottom: 30px; /* crée de l'espace avant la section suivante */
+
 }
 
 /* ============================================================
