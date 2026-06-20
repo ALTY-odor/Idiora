@@ -1,0 +1,157 @@
+/* ============================================================
+   SECTION 1 : DÉFINITION DES COULEURS (Variables CSS)
+   ============================================================ */
+
+/* 
+   :root { }
+   → C'est le "endroit principal" de ton CSS
+   → Tout ce qui est dans :root est accessible partout dans ton fichier
+   → Les --nom: valeur sont appelées "variables CSS"
+*/
+:root {
+    --cream: #F5F5DC;
+    --gold: #D4AF37;
+    --burgundy: #800020;
+    --black: #1A1A1A;
+}
+
+body {
+    background-color: var(--cream);
+    color: var(--black);
+    font-family: 'Georgia', serif;
+    text-align: center;
+}
+
+h1 {
+    color: var(--gold);
+    font-size: 48px;
+    font-weight: bold;
+    margin-top: 50px;
+}
+
+h2 {
+    color: var(--burgundy);
+    font-size: 36px;
+    margin-top: 30px;
+}
+
+p {
+    font-size: 18px;
+    color: var(--black);
+}
+
+a {
+    color: var(--burgundy);
+    text-decoration: none;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 10px;
+    margin-top: 20px;
+}
+
+/* 
+   .dark-section { }
+   → "." = c'est une CLASSE (tu la crées toi-même)
+   → Utilisée dans HTML : <div class="dark-section">
+   → Sert pour une SECTION SPÉCIALE (contraste avec le reste)
+*/
+.dark-section {
+    background-color: var(--burgundy);
+    color: var(--cream);
+    padding: 50px 0;
+}
+
+
+/* 
+   .dark-section a { }
+   → S'applique aux liens QUI SONT DANS .dark-section
+   → logique : fond burgundy (dark) → lien light (lisible)
+*/
+.dark-section a {
+    color: var(--cream);
+}
+
+/* 
+   .food-galery { }
+   → CLASSE pour la galerie de photos de plats
+   → ⚠️ Note : "galery" manque un "l" → correct = "gallery"
+*/
+.food-gallery {
+    /* 
+       display: flex;
+       → mode moderne pour aligner éléments (horizontal par défaut)
+       → Avantages : facile à aligner, responsive, moderne
+       → Alternative : display: block; (éléments un par ligne)
+    */
+    display: flex;
+    
+    /* 
+       flex-wrap: wrap;
+       → si éléments dépassent largeur, ils vont à ligne suivante
+       → Résultat : sur mobile, images s'empilent (2 par ligne...)
+       → Sans wrap : tout sur 1 ligne (débordement)
+    */
+    flex-wrap: wrap;
+    
+    /* 
+       justify-content: center;
+       → alignement HORIZONTAL dans flexbox
+       → center = centre éléments au milieu
+       → Autres : flex-start (gauche), flex-end (droite), space-between
+    */
+    justify-content: center;
+    
+    /* 
+       gap: 20px;
+       → espace ENTRE les éléments (dans flexbox)
+       → Résultat : images ne sont pas collées, espace régulier
+       → Alternative : margin sur chaque image (plus compliqué)
+    */
+    gap: 20px;
+    
+    margin-top: 30px;
+}
+
+/* 
+   .food-gallery img { }
+   → S'applique aux images QUI SONT DANS .food-gallery
+   → DIFFÉRENT de img { } "normal" (règles spéciales pour galerie)
+*/
+.food-gallery img {
+    width: 300px;
+    height: 200px;
+    
+    /* 
+       object-fit: cover;
+       → comment l'image s'adapte à sa boîte (width/height)
+       → cover = l'image "couvre" toute la boîte, même proportions
+       → Résultat : si image originale ≠ 300x200, elle est coupée (pas déformée)
+       → PARFAIT pour galerie : toutes images = même taille
+       → Sans object-fit : image écrasée (déformée)
+    */
+    object-fit: cover;
+    
+    border-radius: 10px;
+}
+
+/* ============================================================
+   RÉCAP : 3 CONCEPTS ESSENTIELS À RETENIR
+   ============================================================ */
+
+/*
+   1. --nom: valeur;
+      → Tu crées une variable ("nom" pour une couleur)
+      → Ex: --gold: #D4AF37;
+   
+   2. var(--nom);
+      → Tu utilises la variable
+      → Ex: color: var(--gold);
+   
+   3. .classe { }
+      → Tu crées une CLASSE (boîte personnalisée)
+      → Ex: .dark-section { }
+      → Dans HTML : <div class="dark-section">
+*/
