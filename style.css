@@ -137,6 +137,13 @@ img {
     margin-bottom: 30px; /* crée de l'espace avant la section suivante */
 
 }
+.ambiance-photo {
+    max-width: 500px;
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+    margin-top: 20px;
+}
 
 /* ============================================================
    RÉCAP : 3 CONCEPTS ESSENTIELS À RETENIR
